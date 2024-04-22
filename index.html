@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>booking</title>
+  <link rel="stylesheet" href="stylesheets/all.css">
+  
+</head>
+<style>
+  :root {
+    --bs-font-sans-serif: system-ui, -apple-system, "Microsoft JhengHei", 微軟正黑體, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  .bg-cover {
+    background-position: center center;
+    background-size: cover;
+  }
+  
+    /* 隐藏日期输入框的默认样式 */
+    input[type="date"]::-webkit-inner-spin-button,
+    input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+  }
+
+ 
+</style>
+
+<body>
+  <header class="navbar">
+    <nav class="container py-4">
+      <div class="d-md-none">
+        <a href=""><svg xmlns="http://www.w3.org/2000/svg"  width="20" height="20" fill="dark" class="bi bi-list" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+        </svg></a>
+      </div>
+      <a href="#" class="text-md-start"><img src="https://raw.githubusercontent.com/hexschool/2022-web-layout-training/d796f511bed88b5468b1c02b9dc1f17048b1448f/week8-booking/logo-aloha.svg" alt="Aloha"></a>
+      <div class="d-flex align-items-center">
+        <div class="d-none d-md-flex align-items-center">
+          <i class="bi bi-globe fs-3">
+            <a href="#" class="dropdown-toggle text-dark"></a>
+          </i>
+          <a href="#" class="text-decoration-none link-dark mx-5">Sign up</a>
+        </div>
+        <a href="#" class="text-decoration-none link-dark">Login</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- picture carousel -->
+  <div class="carousel slide " id="carouselZone" data-bs-ride="carousel">
+      <div class="carousel-inner" style="height: 320px;">
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25 z-1"></div>
+        <div class="position-absolute top-50 start-50 translate-middle text-center text-white z-2">
+          <p class="display-5 fw-8">Discover your ideal hotel</p>
+        </div>
+        <div class="carousel-item active">
+          <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/week8-booking/index-banner.jpg?raw=true" alt="">
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=2849&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselZone" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselZone" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+  </div>
+
+  <!-- search bar -->
+  <div class="container mb-5">
+    <div class="row gx-3  bg-secondary p-3 d-lg-flex rounded-3 mx-md-7 mx-lg-8 ">
+      <div class="col-lg-10">
+        <div class="row row-cols-lg-3">
+          <div class="col-12 mb-3 mb-lg-0">
+            <input class="rounded-1 border-0 form-control p-3" type="text" placeholder="Destination">
+          </div>
+          <div class="col-12 mb-3 mb-lg-0">
+            <input class="rounded-1 border-0 form-control p-3" type="text" placeholder="Check-in / Check-out">
+          </div>
+          <div class="col-12 mb-3 mb-lg-0">
+            <input class="rounded-1 border-0 form-control p-3" type="text" placeholder="Guests">
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <div class="row ">
+          <div class="col">
+            <button class="bg-primary form-control text-white fw-bold p-3" type="submit">Search</button>
+          </div>         
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- city rank -->
+  <div class="container">
+    <h4 class="fs-2 mb-4">Top Choices</h3>
+    <ul class="d-flex list-unstyled mb-4">
+      <li><a class="text-decoration-none fs-4 px-3 border-bottom border-primary border-2" href="#">Bali<sup>128</sup></a></li>
+      <li><a class="text-decoration-none fs-4 px-3 border-bottom border-primary border-2" href="#">Okinawa<sup>67</sup></a></li>
+      <li><a class="text-decoration-none fs-4 px-3 border-bottom border-primary border-2" href="#">Taipei<sup>53</sup></a></li>
+    </ul>
+  </div>
+
+  <!-- picture rank -->
+  <div class="container mb-4">
+    <div class="row">
+      <div class="col d-flex overflow-scroll">
+        <div class="card border-0 me-4 w-75">
+          <div class="row g-0  flex-column ">
+            <div class="col bg-cover p-6 rounded-2 mb-2" style="background-image:url(https://github.com/hexschool/2022-web-layout-training/blob/main/week8-booking/top1.jpg?raw=true);width:240px; height:164px;"></div>
+            <div class="col d-flex flex-column ">
+              <div class="card-title fw-bold ">Hotel Aqua</div>
+              <div class="d-flex align-items-center">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <p class="fw-normal mb-0 ms-1">5.0</p>
+                <small><p class="card-text text-gray fs-7">・2k reviews</p></small>
+              </div>
+              <div class="d-flex align-items-center flex-nowrap">
+                <div class="card-text me-2">TWD 2,480</div>
+                <small><s class="card-text text-gray fs-7">TWD 3,980</s></small>
+              </div>             
+            </div>
+          </div>
+        </div>
+        <div class="card border-0 me-4 w-75">
+          <div class="row g-0  flex-column "></div>
+            <div class="col bg-cover p-6 rounded-2 mb-2" style="background-image:url(https://github.com/hexschool/2022-web-layout-training/blob/main/week8-booking/top1.jpg?raw=true);width:240px; height:164px;"></div>
+            <div class="col d-flex flex-column ">
+              <div class="card-title fw-bold">Hotel Aqua</div>
+              <div class="d-flex align-items-center">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <p class="fw-normal mb-0 ms-1">5.0</p>
+                <small><p class="card-text text-gray fs-7">・2k reviews</p></small>
+              </div>
+              <div class="d-flex align-items-center">
+                <div class="card-text me-2">TWD 2,480</div>
+                <small><s class="card-text text-gray fs-7">TWD 3,980</s></small>
+              </div>
+              
+            </div>
+
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>  
+
+</body>
+</html>
